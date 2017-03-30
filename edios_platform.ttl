@@ -1,0 +1,72 @@
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix edios: <http://linked.seadatanet.org/edios/>.
+@prefix ef: <http://www.w3.org/2015/03/inspire/ef#>.
+@prefix gl: <http://schema.geolink.org/>.
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix inspire-emf: <http://purl.org/voc/ef#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@prefix sdc-ld: <http://linked-def.seadatanet.org/#>.
+
+edios:123456789 a gl:Platform,
+					gl:DigitalObject,
+					inspire-emf:EnvironmentalMonitoringFacility,
+					ef:EnvironmentalMonitoringFacility;
+	dcterms:creator <http://linked.seadatanet.org/edmo/396>;
+	dcterms:created "2017-03-23T09:31:00Z"^^xsd:dateTime;
+	rdfs:label "Celtic Explorer"@en;
+	dcterms:modified "2017-03-23T09:38:00Z";
+	rdfs:comment "A description of the platform"@en;
+	gl:hasOwner <http://linked.seadatanet.org/edmo/396>;
+	gl:hasOperator <http://linked.seadatanet.org/edmo/396>;
+	dcterms:identifier <http://vocab.nerc.ac.uk/collection/C17/current/74CE/>;
+	gl:plType <http://vocab.nerc.ac.uk/collection/L06/current/32/>;
+	gl:hasInstrument [a gl:Instrument;
+		gl:hasInstrumentType <http://vocab.nerc.ac.uk/collection/L05/current/115/>
+	];
+	gl:hasInstrument [a gl:Instrument;
+		gl:hasInstrumentType <http://vocab.nerc.ac.uk/collection/L05/current/130/>
+	];
+	inspire-emf:involvedIn edios:147258369;
+	inspire-emf:involvedIn edios:741852963;
+	dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+	dcterms:subject <http://registry.it.csiro.au/def/isotc211/MD_TopicCategoryCode/oceans>.
+	
+edios:741852963 a inspire-emf:EnvironmentalMonitoringActivity, 
+					gl:DigitalObject, 
+					gl:Document, 
+					prov:Activity;
+	rdfs:label "Series name"@en;
+	dcterms:modified "2017-03-24T11:56:00Z"^^xsd:dateTime;
+	rdfs:comment "A description of the series"@en;
+	gl:hasMeasurementType <http://vocab.nerc.ac.uk/collection/P02/current/PSAL/>;
+	gl:hasMeasurementType <http://vocab.nerc.ac.uk/collection/P02/current/TEMP/>;
+	sdc-ld:validationUsed <http://vocab.nerc.ac.uk/collection/L12/current/N/>;
+	gl:hasInstrument [a gl:Instrument;
+		gl:hasInstrumentType <http://vocab.nerc.ac.uk/collection/L05/current/130/>
+	];
+	gl:depthCategory <http://vocab.nerc.ac.uk/collection/L13/current/UK/>;
+	gl:hasProgram edios:879654123;
+	dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+	dcterms:subject <http://registry.it.csiro.au/def/isotc211/MD_TopicCategoryCode/oceans>;
+	prov:startedAt "2017-01-10T00:00:00Z"^^xsd:dateTime;
+	prov:endedAt "2017-01-10T23:59:59Z"^^xsd:dateTime;
+	dcterms:spatial [ a dcterms:Location;
+        locn:geometry "POLYGON((-58.124 72.66, 18.7018 72.66, 18.7018 43.988, -58.124 43.988, -58.124 72.66))"^^gsp:wktLiteral;
+    ];
+    gl:hasGeometryAsWktLiteral "LINESTRING((-58.124 72.66, 18.7018 43.988))"^^gsp:wktLiteral;
+    sdc-ld:observationDepth <http://linked.seadatanet.org/edios/741852963#observationDepth>;
+    sdc-ld:bathymetricDepth <http://linked.seadatanet.org/edios/741852963#bathymetricDepth>.
+    
+edios:741852963_observationDepth a sdc-ld:ObservationDepth.
+
+<http://linked.seadatanet.org/edios/741852963#observationDepthMax> a sdc-ld:Depth.
+
+<http://linked.seadatanet.org/edios/741852963#observationDepthMin> a sdc-ld:Depth.
+
+<http://linked.seadatanet.org/edios/741852963#bathymetricDepth> a sdc-ld:BathymetricDepth.
+
+<http://linked.seadatanet.org/edios/879654123> a gl:Program.
